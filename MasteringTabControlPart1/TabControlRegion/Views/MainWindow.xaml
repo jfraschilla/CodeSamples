@@ -1,0 +1,23 @@
+﻿<Window x:Class="TabControlRegion.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding NavigateCommand}" CommandParameter="ViewA">Navigate A</Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="ViewB">Navigate B</Button>
+        </StackPanel>
+        <TabControl Grid.Row="1" prism:RegionManager.RegionName="TabRegion" />
+    </Grid>
+</Window>
