@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <AssemblyName>MultiShellEfCore.Infrastructure</AssemblyName>
+    <RootNamespace>MultiShellEfCore.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Prism\IDatabaseBehavior.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Prism\IDatabaseBehavior.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.1.36-pre" />
+  </ItemGroup>
+
+</Project>
